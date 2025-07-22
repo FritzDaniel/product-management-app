@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: m4a1
+
+  datasource:
+    url: jdbc:h2:mem:m4a1DB
+    driver-class-name: org.h2.Driver
+    username: root
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+jwt:
+  secret: 377430ce78c534b20eac7a66b0d079b3d0990254f725469a11bd2d10b05019af
+  expiration: 86400000
