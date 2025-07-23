@@ -104,3 +104,7 @@ Includes JWT authentication, full CRUD functionality, search, filtering, and cac
 4. Run the React app:
    ```bash
    npm run dev
+
+   Url: http://localhost:5173/
+   
+   *Note: Kindly to refresh 2 or 3 times if the login/register is not redirecting to product page.
