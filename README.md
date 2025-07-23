@@ -1,12 +1,62 @@
-# React + Vite
+# Product Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application for managing products, built with Java Spring Boot (backend) and React + Bootstrap (frontend).  
+Includes JWT authentication, full CRUD functionality, search, filtering, and caching.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Tech Stack
 
-## Expanding the ESLint configuration
+- **Backend**: Java 17, Spring Boot, Spring Security, JWT, H2 (in-memory DB)
+- **Frontend**: React, React Router, React Bootstrap
+- **Build Tool**: Maven
+- **Testing**: JUnit
+- **Cache**: Spring In-Memory Cache (`@Cacheable`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+### 🔐 Authentication
+- JWT-based login/register
+- Role-based access
+- Auth-protected endpoints
+
+### 📦 Product Management
+- Create, Read, Update, Delete (CRUD)
+- Input validation
+- Caching for product listing
+
+### 🔍 Filtering & Search
+- Filter products by price range
+- Search products by name
+- Fetch product by ID
+
+### 💻 Frontend UI
+- Login & register pages
+- Product manager dashboard with:
+  - Bootstrap-powered layout
+  - Filter/search inputs
+  - Live product table
+  - Add product form
+  - Logout button
+  - Logged-in user display
+
+---
+
+## 🧪 Testing
+
+- Unit tests using JUnit for service and controller layers
+- Authentication tests
+- Product CRUD and validation test cases
+
+---
+
+## 🖥️ Run Locally
+
+### Backend
+
+1. Clone the project:
+   ```bash
+   git clone https://github.com/FritzDaniel/product-management-app
+   cd product-management-app
