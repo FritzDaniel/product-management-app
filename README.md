@@ -60,3 +60,23 @@ Includes JWT authentication, full CRUD functionality, search, filtering, and cac
    ```bash
    git clone https://github.com/FritzDaniel/product-management-app
    cd product-management-app
+
+2. Navigate to the backend:
+   ```bash
+   cd backend
+
+3. Build the project:
+   ```bash
+   ./mvnw clean install
+
+4. Run the application:
+   ```bash
+   ./mvnw spring-boot:run
+
+5. Access API / H2 Console:
+   ```bash
+    Base URL: http://localhost:8080/api/v1/products
+
+    H2 Console: http://localhost:8080/h2-console
+
+    JDBC URL: jdbc:h2:mem:m4a1DB | Username: root
