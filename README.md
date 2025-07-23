@@ -75,8 +75,32 @@ Includes JWT authentication, full CRUD functionality, search, filtering, and cac
 
 5. Access API / H2 Console:
    ```bash
-    Base URL: http://localhost:8080/api/v1/products
+    Base URL: http://localhost:8080/api/v1
 
     H2 Console: http://localhost:8080/h2-console
 
     JDBC URL: jdbc:h2:mem:m4a1DB | Username: root
+
+    User Seeder (Automatically Created when run the application)
+    username: admin
+    password: secret
+
+    You can access the Postman on backend/postman
+
+### Frontend
+
+1. Open to the the project:
+   ```bash
+   cd product-management-app
+
+2. Navigate to the frontend:
+   ```bash
+   cd frontend
+
+3. Install the Dependencies:
+   ```bash
+   npm install
+
+4. Run the React app:
+   ```bash
+   npm run dev
