@@ -1,4 +1,4 @@
-package com.app.filoom.config;
+package com.api.product.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

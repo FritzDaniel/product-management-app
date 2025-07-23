@@ -5,6 +5,9 @@ import com.api.product.product.dto.ProductRequest;
 import com.api.product.product.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,18 +19,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
+@Slf4j
 public class ProductController {
 
     private final ProductService productService;
 
     @PostMapping
+    @CacheEvict(value = "products", allEntries = true)
     public ResponseEntity<Product> create(@RequestBody @Valid ProductRequest product) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return ResponseEntity.ok(productService.create(product, authentication));
     }
 
     @GetMapping
+    @Cacheable("products")
     public ResponseEntity<List<Product>> getAll() {
+        log.info("Fetching from DB...");
         return ResponseEntity.ok(productService.getAll());
     }
 
@@ -37,12 +44,14 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
+    @CacheEvict(value = "products", allEntries = true)
     public ResponseEntity<Product> update(@PathVariable Integer id, @RequestBody @Valid Product product) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return ResponseEntity.ok(productService.update(id, product, authentication));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
+    @CacheEvict(value = "products", allEntries = true)
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         productService.delete(id);
         return ResponseEntity.noContent().build();

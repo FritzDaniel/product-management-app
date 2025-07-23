@@ -1,1 +1,3 @@
+com\api\product\auth\AuthServiceTest.class
+com\api\product\product\ProductTest.class
 com\api\product\ProductApplicationTests.class

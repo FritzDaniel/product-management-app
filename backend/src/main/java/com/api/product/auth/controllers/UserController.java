@@ -3,7 +3,8 @@ package com.api.product.auth.controllers;
 import com.api.product.auth.dto.AuthRequest;
 import com.api.product.auth.dto.SignUpRequest;
 import com.api.product.auth.services.UserService;
-import com.app.filoom.config.ResponseHandler;
+
+import com.api.product.config.ResponseHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
