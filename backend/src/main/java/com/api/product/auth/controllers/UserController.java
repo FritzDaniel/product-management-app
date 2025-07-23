@@ -32,7 +32,7 @@ public class UserController {
             Map<String, String> dataToken = new HashMap<>();
             dataToken.put("token", token);
 
-            return ResponseHandler.responseBuilder("Success login.", HttpStatus.OK.value(), dataToken);
+            return ResponseHandler.responseBuilder("Success register.", HttpStatus.OK.value(), dataToken);
         } catch (BadCredentialsException | IllegalArgumentException e) {
             return ResponseHandler.responseBuilder("An unexpected error occurred: " + e.getMessage(), HttpStatus.BAD_REQUEST.value(), null);
         } catch (Exception e) {
